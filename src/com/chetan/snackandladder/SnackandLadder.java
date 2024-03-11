@@ -10,6 +10,7 @@ public class SnackandLadder {
 	private static final int NO_PLAY = 0;
 	private static final int LADDER = 1;
 	private static final int SNAKE = 2;
+	private static final int WINNING_POSITION = 100;
 	
 	public void showPosition()
 	{
@@ -18,11 +19,16 @@ public class SnackandLadder {
 	public void playgame()
 	{
 		Random random = new Random();
+		
+		while(playerPosition < WINNING_POSITION)
+		{
+			
 		rolldie = random.nextInt(6)+1;
 		System.out.println("Player Die Roll = " + rolldie);
 		
 	   dieOption = random.nextInt(3);
-	   System.out.println("Die Position = " + dieOption);
+	   System.out.println("Die Option = " + dieOption);
+	   System.out.println("-------------------------------------");
 	   
 	   switch(dieOption)
 	   {
@@ -45,6 +51,8 @@ public class SnackandLadder {
 	       }
 		   break;
 	   }
+	    showPosition();
+	}
 	}
 	
 	
