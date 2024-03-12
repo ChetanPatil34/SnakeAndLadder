@@ -11,7 +11,7 @@ public class SnackandLadder {
 	private static final int LADDER = 1;
 	private static final int SNAKE = 2;
 	private static final int WINNING_POSITION = 100;
-
+	private int dierolecount = 0;
 	
 	public void showPosition()
 	{
@@ -31,7 +31,7 @@ public class SnackandLadder {
 	   System.out.println("Die Option = " + dieOption);
 	   System.out.println("-------------------------------------");
 	   
-	   
+	   dierolecount +=1;
 	   
 	   switch(dieOption)
 	   {
@@ -61,7 +61,7 @@ public class SnackandLadder {
 	    showPosition();
 	   
 		}
-		 
+		 System.out.println("Die Role Count = " + dierolecount);
 		
 	}
 	
