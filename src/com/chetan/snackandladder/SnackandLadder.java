@@ -11,6 +11,7 @@ public class SnackandLadder {
 	private static final int LADDER = 1;
 	private static final int SNAKE = 2;
 	private static final int WINNING_POSITION = 100;
+
 	
 	public void showPosition()
 	{
@@ -29,6 +30,8 @@ public class SnackandLadder {
 	   dieOption = random.nextInt(3);
 	   System.out.println("Die Option = " + dieOption);
 	   System.out.println("-------------------------------------");
+	   
+	   
 	   
 	   switch(dieOption)
 	   {
@@ -51,8 +54,15 @@ public class SnackandLadder {
 	       }
 		   break;
 	   }
+	   if(playerPosition > WINNING_POSITION)
+	   {
+		   playerPosition = playerPosition - rolldie;
+	   }
 	    showPosition();
-	}
+	   
+		}
+		 
+		
 	}
 	
 	
@@ -63,7 +73,7 @@ public class SnackandLadder {
 		SnackandLadder snackandladder = new SnackandLadder();
 		snackandladder.showPosition();
 		snackandladder.playgame();
-		snackandladder.showPosition();
+		
 		
 		
 	}
