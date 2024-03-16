@@ -17,7 +17,7 @@ public class SnackandLadder {
 	{
 		System.out.println("Player Position = " + playerPosition );
 	}
-	public void playgame()
+	public int playgame()
 	{
 		Random random = new Random();
 		
@@ -63,6 +63,23 @@ public class SnackandLadder {
 		}
 		 System.out.println("Die Role Count = " + dierolecount);
 		
+		 return dierolecount;
+	}
+	
+	public void winPlayer(SnackandLadder player2)
+	{
+		if(this.playgame() == player2.playgame())
+		{
+			System.out.println("Game is Tie");
+		}
+		else if(this.playgame() < player2.playgame())
+		{
+			System.out.println("Player 1 is Win");
+		}
+		else
+		{
+			System.out.println("Player 2 is Win");
+		}
 	}
 	
 	
@@ -70,12 +87,31 @@ public class SnackandLadder {
 	public static void main(String[] args) {
 		System.out.println("Well Come to SnackLadder Project");
 		
-		SnackandLadder snackandladder = new SnackandLadder();
-		snackandladder.showPosition();
-		snackandladder.playgame();
+		//SnackandLadder snackandladder = new SnackandLadder();
+		//snackandladder.showPosition();
+		//snackandladder.playgame();
 		
+		SnackandLadder player1 = new SnackandLadder();
 		
+		System.out.println("Player 1");
+		player1.showPosition();
+		player1.playgame();
+		player1.showPosition();
 		
+		System.out.println("-------------------------------------");
+		System.out.println("-------------------------------------");
+		
+        SnackandLadder player2 = new SnackandLadder();
+		
+		System.out.println("Player 2");
+		player2.showPosition();
+		player2.playgame();
+		player2.showPosition();
+		
+		System.out.println("-------------------------------------");
+		System.out.println("-------------------------------------");
+		
+		player1.winPlayer(player2);
 	}
 
 }
